@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import cafe.jjdev.mall.service.Member;
 import cafe.jjdev.mall.service.MemberDao;
 
-@WebServlet({"/","/index"})
+@WebServlet("/")
 public class IndexController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("IndexController doGet");
