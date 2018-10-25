@@ -13,15 +13,17 @@ import cafe.jjdev.mall.service.MemberDao;
 @WebServlet("/addMember")
 public class AddMember extends HttpServlet{
 	MemberDao memberDao;
+	// 회원가입 폼
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/jsp/addMember.jsp").forward(request, response);
 	}
-	
+	// 회원가입 액션
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Member member = new Member();
 		memberDao = new MemberDao();
 		int row = memberDao.insertMember(member);
+		response.sendRedirect(request.getContextPath()+"/login");
 	}
 }
