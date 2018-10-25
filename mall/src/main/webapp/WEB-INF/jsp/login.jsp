@@ -7,6 +7,11 @@
 </head>
 <body>
 	<h1>로그인 폼</h1>
+	<form action="<%= request.getContextPath() %>/" method="post">
+		<input type="text" name="id">
+		<input type="password" name="pw">
+		<input type="submit" value="로그인">
+	</form>
 	
 </body>
 </html>
